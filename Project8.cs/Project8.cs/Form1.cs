@@ -47,14 +47,14 @@ namespace Project8.cs
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ClickColumn(object sender, EventArgs e)
         {
-
+            Button clicked = (Button)sender;
         }
 
-        private void Label1_Click(object sender, EventArgs e)
+        private void NewGame(object sender, EventArgs e)
         {
-
+            Button clicked = (Button)sender;
         }
     }
 }
