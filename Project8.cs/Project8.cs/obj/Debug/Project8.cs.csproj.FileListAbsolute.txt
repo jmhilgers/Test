@@ -8,3 +8,13 @@ C:\Users\jmhilgers\source\repos\Project8.cs\Project8.cs\obj\Debug\Project8.cs.cs
 C:\Users\jmhilgers\source\repos\Project8.cs\Project8.cs\obj\Debug\Project8.cs.csproj.CoreCompileInputs.cache
 C:\Users\jmhilgers\source\repos\Project8.cs\Project8.cs\obj\Debug\Project8.cs.exe
 C:\Users\jmhilgers\source\repos\Project8.cs\Project8.cs\obj\Debug\Project8.cs.pdb
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\bin\Debug\Project8.cs.exe.config
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\bin\Debug\Project8.cs.exe
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\bin\Debug\Project8.cs.pdb
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\obj\Debug\Project8.cs.csprojAssemblyReference.cache
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\obj\Debug\Project8.cs.Form1.resources
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\obj\Debug\Project8.cs.Properties.Resources.resources
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\obj\Debug\Project8.cs.csproj.GenerateResource.cache
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\obj\Debug\Project8.cs.csproj.CoreCompileInputs.cache
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\obj\Debug\Project8.cs.exe
+C:\Users\jmhilgers\Source\Repos\Test\Project8.cs\Project8.cs\obj\Debug\Project8.cs.pdb

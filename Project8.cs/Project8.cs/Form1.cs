@@ -29,14 +29,14 @@ namespace Project8.cs
                     _grid[i, j].BorderStyle = BorderStyle.FixedSingle;
 
                     //don't put this here - but this is how you would add a piece
-                    /*if (j % 2 == 0)
+                    if (j % 2 == 0)
                     {
                         _grid[i, j].Image = Properties.Resources.blackCircle;
                     }
                     else
                     {
                         _grid[i, j].Image = Properties.Resources.redCircle;
-                    }*/
+                    }
 
                     this.Controls.Add(_grid[i, j]);
 
