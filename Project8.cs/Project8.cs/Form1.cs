@@ -55,6 +55,19 @@ namespace Project8.cs
         private void NewGame(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
+            int j = 0;
+            int i = 0;
+            int yPos = 58;
+            int xPos = 13;
+            _grid[i, j] = new PictureBox();
+            _grid[i, j].Size = new Size(68, 68);
+            _grid[i, j].Location = new Point(xPos, yPos);
+            _grid[i, j].BorderStyle = BorderStyle.FixedSingle;
+            if (button8  clicked){ 
+             
+                _grid[i, j].Image = null;
+            }
+                    
         }
     }
 }

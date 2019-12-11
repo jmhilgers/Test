@@ -9,7 +9,7 @@ namespace Project8.cs
     public enum PieceColor { empty, red, black };
     class Board
     {
-        public PieceColor Turn() {
+        /*public PieceColor Turn() {
         }
         public PieceColor GetColor(int x, int y)
         {
@@ -30,7 +30,7 @@ namespace Project8.cs
         public bool Move(int col)
         {
 
-        }
+        }*/
     }
 
 }
