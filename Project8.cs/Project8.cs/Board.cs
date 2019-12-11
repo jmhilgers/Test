@@ -14,6 +14,7 @@ namespace Project8.cs
         public PieceColor GetColor(int x, int y)
         {
 
+
         }
         public bool IsWinner(PieceColor player)
         {

@@ -13,9 +13,19 @@ namespace Project8.cs
     public partial class Form1 : Form
     {
         private PictureBox[,] _grid = new PictureBox[6, 7];
+        private Button[] colbuttons;
+
         public Form1()
         {
             InitializeComponent();
+            colbuttons = new Button[7];
+            colbuttons[0] = button1;
+            colbuttons[1] = button2;
+            colbuttons[2] = button3;
+            colbuttons[3] = button4;
+            colbuttons[4] = button5;
+            colbuttons[5] = button6;
+            colbuttons[6] = button7;
 
             int yPos = 58;
             for (int i = 0; i < 6; i++)
@@ -50,24 +60,30 @@ namespace Project8.cs
         private void ClickColumn(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
+            int col = -1;
+            for (int i =0; i<colbuttons.Length; i++)
+            {
+               if ( colbuttons[i] == clicked)
+                {
+                    col = i;
+                    break;
+                }
+            }
         }
 
         private void NewGame(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
-            int j = 0;
-            int i = 0;
-            int yPos = 58;
-            int xPos = 13;
-            _grid[i, j] = new PictureBox();
-            _grid[i, j].Size = new Size(68, 68);
-            _grid[i, j].Location = new Point(xPos, yPos);
-            _grid[i, j].BorderStyle = BorderStyle.FixedSingle;
-            if (button8  clicked){ 
-             
-                _grid[i, j].Image = null;
+            for(int i = 0; i < 6; i++)
+            {
+                for (int j =0; j<7; j++)
+                {
+                    _grid[i, j].Image = null;
+                }
+            }
+            
             }
                     
         }
     }
-}
+
