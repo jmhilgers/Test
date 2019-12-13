@@ -31,7 +31,14 @@ namespace Project8.cs
         //PieceColor currentTurn = new PieceColor();
         public PieceColor Turn
         {
-            get; private set;
+            get
+            {
+                return currentTurn;
+            }
+            set
+            {
+                currentTurn = value;
+            }
         }
 
         public PieceColor GetColor(int x, int y)
@@ -42,18 +49,28 @@ namespace Project8.cs
         {
             for (int i = 0; i < row; i++)
             {
-                for (int j = 0; j < column - 3; j++)
+                for (int j = 0; j < column -3; j++)
                 {
+                    if (_grid[i, j] == PieceColor.empty)
+                    {
+                        continue;
+
+                    }
                     if (_grid[i, j] == _grid[i, j + 1] && _grid[i, j] == _grid[i, j + 2] && _grid[i, j] == _grid[i, j + 3] && _grid[i, j] == player)
                     {
                         return true;
                     }
                 }
             }
-            for (int i = 0; i < column; i++)
+            for (int i = 0; i < row -3; i++)
             {
-                for (int j = 0; j < row - 3; j++)
+                for (int j = 0; j < column; j++)
                 {
+                    if (_grid[i, j] == PieceColor.empty)
+                    {
+                        continue;
+
+                    }
                     if (_grid[i, j] == _grid[i + 1, j] && _grid[i, j] == _grid[i + 2, j] && _grid[i, j] == _grid[i + 3, j] && _grid[i, j] == player)
                     {
                         return true;
@@ -64,16 +81,26 @@ namespace Project8.cs
             {
                 for (int j = 0; j < column - 3; j++)
                 {
+                    if (_grid[i, j] == PieceColor.empty)
+                    {
+                        continue;
+
+                    }
                     if (_grid[i, j] == _grid[i + 1, j + 1] && _grid[i, j] == _grid[i + 2, j + 2] && _grid[i, j] == _grid[i + 3, j + 3] && _grid[i, j] == player)
                     {
                         return true;
                     }
                 }
             }
-            for (int i = row - 1; i > row - 3; i--)
+            for (int i = row - 1; i > row-3; i--)
             {
                 for (int j = 0; j < column - 3; j++)
                 {
+                    if (_grid[i, j] == PieceColor.empty)
+                    {
+                        continue;
+
+                    }
                     if (_grid[i, j] == _grid[i - 1, j + 1] && _grid[i, j] == _grid[i - 2, j + 2] && _grid[i, j] == _grid[i - 3, j + 3] && _grid[i, j] == player)
                     {
                         return true;
@@ -92,22 +119,18 @@ namespace Project8.cs
                     {
                         return false;
                     }
+                    return true;
                 }
                  
             }
-            return true;
+            return false;
         }
         public void SwitchTurns()
         {
-            if (currentTurn == PieceColor.red)
-            {
-                currentTurn = PieceColor.black;
+            if (currentTurn == PieceColor.red) currentTurn = PieceColor.black;
+            else currentTurn = PieceColor.red;
             }
-            else
-            {
-                currentTurn = PieceColor.red;
-            }
-        }
+        
         private bool IsValid(int col)
         {
             if (_grid[0, col] == PieceColor.empty)
@@ -119,7 +142,7 @@ namespace Project8.cs
                 return false;
             }
         }
-        private int getRow(int col)
+        public int getRow(int col)
         {
             for (int i = row - 1; i >= 0; i--)
             {
@@ -127,12 +150,10 @@ namespace Project8.cs
                 {
                     return i;
                 }
-                else
-                {
-                    return -1;
-                }
+               
 
-            } return -1;
+            }
+            return -1;
         }
         public bool Move(int col)
         {

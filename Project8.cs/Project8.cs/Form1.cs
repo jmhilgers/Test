@@ -67,7 +67,7 @@ namespace Project8.cs
                 int row = bd.getRow(col);
                 if (bd.Turn == PieceColor.black)
                 {
-                    _grid[row + 1, col].Image = Properties.Resources.redCircle;
+                    _grid[row + 1, col].Image = Properties.Resources.blackCircle;
                 }
                 else
                 {
@@ -134,7 +134,7 @@ namespace Project8.cs
 
                 }
             }
-            
+            bd = new Board();
             }
                     
         }
