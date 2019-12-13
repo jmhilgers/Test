@@ -18,6 +18,7 @@ namespace Project8.cs
         public Board()
         {
             _grid = new PieceColor[6,7];
+            currentTurn = PieceColor.red;
             for (int i = 0; i < row; i++)
             {
                 for (int j = 0; j < column; j++)
@@ -136,6 +137,7 @@ namespace Project8.cs
         public bool Move(int col)
         {
             int row1 = getRow(col);
+
             if (IsValid(col))
             {
                 _grid[row1, col] = currentTurn;

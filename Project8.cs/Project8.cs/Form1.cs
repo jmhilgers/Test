@@ -64,13 +64,30 @@ namespace Project8.cs
 
             if (bd.Move(col))
             {
-                if(bd.IsWinner(bd.Turn))
+                int row = bd.getRow(col);
+                if (bd.Turn == PieceColor.black)
+                {
+                    _grid[row + 1, col].Image = Properties.Resources.redCircle;
+                }
+                else
+                {
+                    _grid[row +1, col].Image = Properties.Resources.redCircle;
+                }
+                if (bd.IsWinner(bd.Turn))
                 {
                     MessageBox.Show(bd.Turn + "'s Wins.");
+                    for(int i =0; i<7; i++)
+                    {
+                        colbuttons[i].Enabled = false;
+                    }
                 }
                 else if (bd.CheckTie())
                 {
                     MessageBox.Show("Tie game.");
+                    for (int i = 0; i < 7; i++)
+                    {
+                        colbuttons[i].Enabled = false;
+                    }
                 }
                 else
                 {
@@ -107,6 +124,14 @@ namespace Project8.cs
                 for (int j =0; j<7; j++)
                 {
                     _grid[i, j].Image = null;
+                    button1.Enabled = true;
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                    button5.Enabled = true;
+                    button6.Enabled = true;
+                    button7.Enabled = true;
+
                 }
             }
             
