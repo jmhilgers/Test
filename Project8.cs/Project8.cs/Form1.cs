@@ -14,10 +14,12 @@ namespace Project8.cs
     {
         private PictureBox[,] _grid = new PictureBox[6, 7];
         private Button[] colbuttons;
+        private Board bd;
 
         public Form1()
         {
             InitializeComponent();
+            bd = new Board();
             colbuttons = new Button[7];
             colbuttons[0] = button1;
             colbuttons[1] = button2;
@@ -38,17 +40,7 @@ namespace Project8.cs
                     _grid[i, j].Location = new Point(xPos, yPos);
                     _grid[i, j].BorderStyle = BorderStyle.FixedSingle;
 
-                    //don't put this here - but this is how you would add a piece
-                    if (j % 2 == 0)
-                    {
-                        _grid[i, j].Image = Properties.Resources.blackCircle;
-                    }
-                    else
-                    {
-                        _grid[i, j].Image = Properties.Resources.redCircle;
-                    }
-
-                    this.Controls.Add(_grid[i, j]);
+                    Controls.Add(_grid[i, j]);
 
                     xPos += 74;
                 }
@@ -69,6 +61,42 @@ namespace Project8.cs
                     break;
                 }
             }
+
+            if (bd.Move(col))
+            {
+                if(bd.IsWinner(bd.Turn))
+                {
+                    MessageBox.Show(bd.Turn + "'s Wins.");
+                }
+                else if (bd.CheckTie())
+                {
+                    MessageBox.Show("Tie game.");
+                }
+                else
+                {
+                    for (int i =0; i < 6; i++)
+                    {
+                        PieceColor color = bd.GetColor(i, col);
+                        if (color == PieceColor.red)
+                        {
+                            _grid[i, col].Image = Properties.Resources.redCircle;
+                           
+                        }
+                        else if ( color == PieceColor.black)
+                        {
+                            _grid[i, col].Image = Properties.Resources.blackCircle;
+                        }
+                        else
+                        {
+                            _grid[i, col].Image = null;
+                        }
+                    }
+                    bd.SwitchTurns();
+                    label1.Text = (bd.Turn + "'s Turn");
+
+                }
+            }
+
         }
 
         private void NewGame(object sender, EventArgs e)
