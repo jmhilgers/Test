@@ -10,12 +10,15 @@ using System.Windows.Forms;
 
 namespace Project8.cs
 {
+
     public partial class Form1 : Form
     {
         private PictureBox[,] _grid = new PictureBox[6, 7];
         private Button[] colbuttons;
         private Board bd;
-
+        /// <summary>
+        /// This class represents the GUI.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -48,7 +51,11 @@ namespace Project8.cs
                 yPos += 73;
             }
         }
-
+        /// <summary>
+        /// This method allows for the player to select the column in which they want to place their move.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickColumn(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
@@ -115,7 +122,11 @@ namespace Project8.cs
             }
 
         }
-
+        /// <summary>
+        /// This method allows for the user to clear the board and begin a new game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NewGame(object sender, EventArgs e)
         {
             Button clicked = (Button)sender;
